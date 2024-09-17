@@ -3,14 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Node.js Static Site</title>
+    <title>Crypto Price Dashboard</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>Welcome to Node.js Static Site</h1>
-    <p>This is a simple HTML page served by Node.js</p>
-    <button id="clickButton">Click Me</button>
+    <div class="header">
+        <div class="logo">HODLINFO</div>
+        <button class="connect-btn">Connect Telegram</button>
+    </div>
+    
+    <div class="price-info">
+        <div class="faded">Best Price to Trade</div>
+        <div class="price-changes">
+            <span class="change-elm">
+                <span class="change positive">0.1%</span>
+                <span class="change-txt">5 Mins</span>
+            </span>
+            <span class="change-elm">
+                <span class="change positive">0.96%</span>
+                <span class="change-txt">1 Hour</span>
+            </span>
+
+            <span class="best-price">₹ 26,56,110</span>
+
+            <span class="change-elm">
+                <span class="change positive">2.73%</span>
+                <span class="change-txt">1 Day</span>
+            </span>
+            <span class="change-elm">
+                <span class="change positive">7.51%</span>
+                <span class="change-txt">7 Days</span>
+            </span>
+        </div>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Platform</th>
+                <th>Last Traded Price</th>
+                <th>Buy / Sell Price</th>
+                <th>Difference</th>
+                <th>Savings</th>
+            </tr>
+        </thead>
+        <tbody id="data_table_body">
+        </tbody>
+    </table>
 
     <script src="/js/script.js"></script>
+</body>
 </body>
 </html>

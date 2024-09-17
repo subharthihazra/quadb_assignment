@@ -1,3 +1,78 @@
-body{
-    background: red;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4fe3c1;
+}
+.connect-btn {
+    background-color: #4fe3c1;
+    color: #1a1a1a;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.price-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.best-price {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.price-changes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.change-elm {
+    padding: 5px 10px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.change-txt {
+    display: block;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+.change {
+    padding: 0px 10px;
+    font-size: 20px;
+    display: flex;
+}
+.positive {
+    color: #4fe3c1;
+}
+.negative {
+    color: #ff6b6b;
+}
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+td {
+    background-color: #2a2a2a;
+    border-radius: 5px;
+}
+.faded, th {
+    color: gray;
 }

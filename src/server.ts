@@ -1,8 +1,9 @@
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
-import ErrorMiddleware from "./errorhandlers/errorMiddleware";
 import dotenv from "dotenv";
 import path from "path";
+import router from "./routes/route";
+import { getData } from "./controllers/fetchData";
 
 dotenv.config();
 
@@ -21,17 +22,14 @@ app.use(express.urlencoded({ extended: false }));
 // parse json
 app.use(express.json());
 
+// Serve apis
+app.use("/api/", router);
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, "../public")));
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
-});
-
-
-// ERROR middleware
-app.use(ErrorMiddleware);
+// Run getData periodically
+setInterval(getData, parseInt(process.env.REFETCH_INTERVAL!) || 60000);
 
 const startServer = async () => {
   try {
