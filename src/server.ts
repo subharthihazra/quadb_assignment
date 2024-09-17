@@ -2,6 +2,7 @@ import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import ErrorMiddleware from "./errorhandlers/errorMiddleware";
 import dotenv from "dotenv";
+import path from "path";
 
 dotenv.config();
 
@@ -20,16 +21,20 @@ app.use(express.urlencoded({ extended: false }));
 // parse json
 app.use(express.json());
 
+
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, "../public")));
+
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
 });
+
 
 // ERROR middleware
 app.use(ErrorMiddleware);
 
 const startServer = async () => {
   try {
-
     const port = String(process.env.SERVER_PORT) || 5000;
     app.listen(port, () => {
       console.log(`Server is listening on port ${port} ...`);
